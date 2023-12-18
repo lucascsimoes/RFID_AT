@@ -55,10 +55,14 @@ public class Main {
     }
 
     public static String checkValues(String codeClient, String codeServer) {
-        if (codeClient.equals(codeServer)) {
-            return "ACK";
-        } else {
-            return "NACK";
+        if (codeClient.length() == codeServer.length()) {
+            if (codeClient.equals(codeServer)) {
+                return "ACK";
+            } else {
+                return "NACK";
+            }
         }
+
+        return "null";
     }
 }

@@ -45,33 +45,37 @@ public class Main {
                 try {
                     String response = sendRequest(code.getText());
 
-                    if (code.getText().equals("")) {
-                        panel.setBackground(null);
-                    } else {
-                        if (response.equals("ACK")) {
-                            panel.setBackground(Color.GREEN);
-
-                            Timer timer = new Timer();
-                            timer.schedule(new TimerTask() {
-                                @Override
-                                public void run() {
-                                    SwingUtilities.invokeLater(() -> {
-                                        panel.setBackground(null);
-                                    });
-                                }
-                            }, 3000);
+                    if (!response.equals("null")) {
+                        if (code.getText().equals("")) {
+                            panel.setBackground(null);
                         } else {
-                            panel.setBackground(Color.RED);
+                            if (response.equals("ACK")) {
+                                panel.setBackground(Color.GREEN);
 
-                            Timer timer = new Timer();
-                            timer.schedule(new TimerTask() {
-                                @Override
-                                public void run() {
-                                    SwingUtilities.invokeLater(() -> {
-                                        panel.setBackground(null);
-                                    });
-                                }
-                            }, 3000);
+                                Timer timer = new Timer();
+                                timer.schedule(new TimerTask() {
+                                    @Override
+                                    public void run() {
+                                        SwingUtilities.invokeLater(() -> {
+                                            panel.setBackground(null);
+                                            code.setText("");
+                                        });
+                                    }
+                                }, 3000);
+                            } else {
+                                panel.setBackground(Color.RED);
+
+                                Timer timer = new Timer();
+                                timer.schedule(new TimerTask() {
+                                    @Override
+                                    public void run() {
+                                        SwingUtilities.invokeLater(() -> {
+                                            panel.setBackground(null);
+                                            code.setText("");
+                                        });
+                                    }
+                                }, 3000);
+                            }
                         }
                     }
                 }
@@ -85,33 +89,39 @@ public class Main {
                 try {
                     String response = sendRequest(code.getText());
 
-                    if (code.getText().equals("")) {
-                        panel.setBackground(null);
-                    } else {
-                        if (response.equals("ACK")) {
-                            panel.setBackground(Color.GREEN);
-
-                            Timer timer = new Timer();
-                            timer.schedule(new TimerTask() {
-                                @Override
-                                public void run() {
-                                    SwingUtilities.invokeLater(() -> {
-                                        panel.setBackground(null);
-                                    });
-                                }
-                            }, 3000);
+                    if (!response.equals("null")) {
+                        if (code.getText().equals("")) {
+                            panel.setBackground(null);
                         } else {
-                            panel.setBackground(Color.RED);
+                            if (response.equals("ACK")) {
+                                panel.setBackground(Color.GREEN);
 
-                            Timer timer = new Timer();
-                            timer.schedule(new TimerTask() {
-                                @Override
-                                public void run() {
-                                    SwingUtilities.invokeLater(() -> {
-                                        panel.setBackground(null);
-                                    });
-                                }
-                            }, 3000);
+                                Timer timer = new Timer();
+                                timer.schedule(new TimerTask() {
+                                    @Override
+                                    public void run() {
+                                        SwingUtilities.invokeLater(() -> {
+                                            panel.setBackground(null);
+                                            code.setText("");
+                                        });
+                                    }
+                                }, 3000);
+
+                                code.setText("");
+                            } else {
+                                panel.setBackground(Color.RED);
+
+                                Timer timer = new Timer();
+                                timer.schedule(new TimerTask() {
+                                    @Override
+                                    public void run() {
+                                        SwingUtilities.invokeLater(() -> {
+                                            panel.setBackground(null);
+                                            code.setText("");
+                                        });
+                                    }
+                                }, 3000);
+                            }
                         }
                     }
                 }
